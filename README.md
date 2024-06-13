@@ -20,13 +20,14 @@
 <p>Sistem Manajemen Gudang</p>
 
 ## Penjelasan Proyek
-<p>Sistem Manajemen Gudang
-Spesifikasi:
-Pembelian
-Barang Masuk & Keluar
-Pengurutan Barang
-Penjualan
-Riwayat Barang</p>
+<li>Sistem Manajemen Gudang <br>Spesifikasi:</li>
+  <ul>
+    <li>Pembelian</li>
+    <li>Barang Masuk & Keluar</li>
+    <li>Pengurutan Barang</li>
+    <li>Penjualan</li>
+    <li>Riwayat Barang</li>
+  </ul>
 
 ## Komponen Proyek
 <p>Menggunakan Framework Laravel, Jika ingin menerapkan Rest API gunakan Vue JS/React JS</p>
