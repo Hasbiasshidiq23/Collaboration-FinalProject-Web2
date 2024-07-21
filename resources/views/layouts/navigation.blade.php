@@ -6,7 +6,8 @@
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
-                        <x-application-logo class="block h-9 w-auto fill-current text-gray-800 dark:text-gray-200" />
+                        <!-- resources/views/components/application-logo.blade.php -->
+                        <img src="{{ asset('assets/Warehouse_Logo_-_Logo_Is_Us-removebg-preview.png') }}" class="img-fluid" style="height: 125px;" alt="Application Logo">
                     </a>
                 </div>
 
