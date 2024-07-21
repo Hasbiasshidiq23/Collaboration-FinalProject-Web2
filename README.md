@@ -33,7 +33,8 @@
 <p>Menggunakan Framework Laravel, Jika ingin menerapkan Rest API gunakan Vue JS/React JS</p>
 
 ## Pembagian Tim
-<p>Lorem ipsum sir dolor amet.</p>
+<p>Hasbi As Shidiq = Login, Register, Barang Masuk Keluar, dan Pengurutan Barang, Profile dan Logout</p>
+<p>Hilmansyah = Pembelian, Penjualan dan Riwayat Barang</p>
 
 ## Demo Proyek
 <ul>

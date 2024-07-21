@@ -1,0 +1,39 @@
+<?php
+// Koneksi ke database
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "final_project";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+    die("Koneksi gagal: " . $conn->connect_error);
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (isset($_POST['username']) && isset($_POST['password'])) {
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+
+        // Menyimpan data ke database
+        $sql = "INSERT INTO login (username, password) VALUES (?, ?)";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("ss", $username, $password);
+        $stmt->execute();
+
+        if ($stmt->affected_rows > 0) {
+            echo "Registrasi berhasil!";
+            header ("Location: Login.html");
+        } else {
+            echo "Registrasi gagal!";
+        }
+
+        $stmt->close();
+    } else {
+        echo "Username dan Password harus diisi!";
+    }
+}
+
+$conn->close();
+?>

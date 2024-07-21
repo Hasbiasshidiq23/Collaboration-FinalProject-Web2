@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>Gudang</title>
+	<style>
+		ul {
+  			list-style-type: none;
+  			margin: 0;
+  			padding: 0;
+  			overflow: hidden;
+  			background-color: #333;
+			}
+
+		li {
+  			float: left;
+			}
+
+		li a {
+  			display: block;
+  			color: white;
+  			text-align: center;
+  			padding: 14px 16px;
+  			text-decoration: none;
+			}
+
+		li a:hover {
+  			background-color: #111;
+			}
+
+		.active {
+  			background-color: #04AA6D;
+			}
+		table {
+  			border-collapse: collapse;
+  			width: 100%;
+			}
+
+		th, td {
+  			padding: 8px;
+  			text-align: left;
+  			border-bottom: 1px solid #ddd;
+			}
+	</style>
+</head>
+<body>
+	<div class="Navbar">
+	<ul>
+		<li><a href="#">Pembelian</a></li>
+		<li><a href="#">Penjualan</a></li>
+		<li><a href="#">Barang Masuk</a></li>
+		<li><a href="#">Barang Keluar</a></li>
+		<li><a href="#">Riwayat Barang</a></li>
+		<li style="float: right;"><a href="#">Logout</a></li>
+		<li style="float: right;"><a href="#">About</a></li>
+	</ul>
+	</div>
+
+	<div class="depan">
+		<h5 style="text-align: center;">Inventory</h5>
+    <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Nama Barang</th>
+      <th scope="col">Stok</th>
+      <th scope="col">Harga Unit</th>
+      <th scope="col">Tombol</th>
+    </tr>
+  </thead>
+	</div>
+</body>
+</html>

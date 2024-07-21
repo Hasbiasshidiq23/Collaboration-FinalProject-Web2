@@ -1,0 +1,55 @@
+<?php
+session_start();
+
+// Koneksi ke database
+$servername = "localhost";
+$db_username = "root";
+$db_password = "";
+$dbname = "final_project";
+
+$conn = new mysqli($servername, $db_username, $db_password, $dbname);
+
+if ($conn->connect_error) {
+    die("Koneksi gagal: " . $conn->connect_error);
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (isset($_POST['username']) && isset($_POST['password'])) {
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+
+        // Mengambil data dari database
+        $sql = "SELECT * FROM login WHERE username = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("s", $username);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        if ($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+
+            // Verifikasi password (tanpa hashing)
+            if ($password === $row['password']) {
+                // Login sukses
+                $_SESSION['username'] = $username;
+                echo "Login berhasil!";
+                // Redirect ke halaman lain
+                header("Location: index.html");
+                exit();
+            } else {
+                echo "Password salah!";
+                include("Login.html");
+            }
+        } else {
+            echo "Username tidak ditemukan!";
+            include("Login.html");
+        }
+
+        $stmt->close();
+    } else {
+        echo "Username dan Password harus diisi!";
+    }
+}
+
+$conn->close();
+?>
