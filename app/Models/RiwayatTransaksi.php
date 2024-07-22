@@ -11,6 +11,15 @@ class RiwayatTransaksi extends Model
 
     protected $table = 'riwayat_transaksis'; // Sesuaikan dengan nama tabel yang ada di database
 
+    protected $fillable = [
+        'tipe_transaksi',
+        'barang_id',
+        'jumlah',
+        'harga',
+        'supplier_id',
+        'departemen_id',
+    ];
+
     public function barang()
     {
         return $this->belongsTo(Barang::class, 'barang_id');
